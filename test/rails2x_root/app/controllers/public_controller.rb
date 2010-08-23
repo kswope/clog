@@ -1,0 +1,1 @@
+../../../common/public_controller.rb
