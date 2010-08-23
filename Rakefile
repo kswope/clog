@@ -4,7 +4,7 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    summary = "Little rails debugging gem for writing colorized output to log file"
+    summary = "Little rails debugging gem for writing colorized output to log file."
     gem.name = "clog"
     gem.summary = summary
     gem.description = summary
