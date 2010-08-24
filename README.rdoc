@@ -3,7 +3,7 @@
 Little Ruby On Rails debugging gem for writing colorized output to log file.
 
 Because clog is all about color  
-{here's a blog posting with color pictures}[http://kswope.com]
+{here's a blog posting with color pictures}[http://kswope.com/2010/08/23/clog-colorful-ruby-on-rails-debug-statements]
 
 == Usage
 
