@@ -33,10 +33,16 @@ class Testclog < Test::Unit::TestCase
   end
 
   def test_colors
-    
+
     def runner(bg, fg=nil)
-      Clog.colors(bg, fg)
-      clog "visual inspection color test"
+
+      if fg
+        Clog.colors(bg, fg)
+      else
+        Clog.colors(bg)
+      end
+      
+      clog "#{fg} on #{bg}"
     end
     
     runner :black
@@ -54,6 +60,15 @@ class Testclog < Test::Unit::TestCase
     runner :white, :black
     runner :white, :blue
     runner :blue, :yellow
+    
+    Clog.colors(:blue)
+    clog "white on blue"
+
+    Clog.colors(:blue, :red)
+    clog "red on blue"
+
+    Clog.colors(:yellow, :red)
+    clog "red on yellow"
     
   end
 
