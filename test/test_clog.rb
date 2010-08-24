@@ -64,6 +64,9 @@ class Testclog < Test::Unit::TestCase
     Clog.colors(:blue)
     clog "white on blue"
 
+    Clog.colors(:red)
+    clog "white on red"
+
     Clog.colors(:blue, :red)
     clog "red on blue"
 
