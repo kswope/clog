@@ -4,7 +4,7 @@ class Clog
 
   @@foreground = :white
   @@background = :red
-  @@maxwidth = 100 # max length before putting caller location on next line
+  @@maxwidth = 150 # max length before putting caller location on next line
 
   #### change default color
   def self.colors(bg, fg=nil)

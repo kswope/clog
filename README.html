@@ -9,34 +9,95 @@
 <h2>File: README.rdoc</h2>
 <table>
   <tr><td>Path:</td><td>README.rdoc</td></tr>
-  <tr><td>Modified:</td><td>Sun Aug 22 19:58:26 -0400 2010</td></tr>
+  <tr><td>Modified:</td><td>Mon Aug 23 20:53:13 -0400 2010</td></tr>
 </table>
 
-<h1>clog</h1>
+<h1>clog (&quot;color log&quot;)</h1>
 <p>
-Description goes here.
+Little Ruby On Rails debugging gem for writing colorized output to log
+file.
 </p>
-<h2>Note on Patches/Pull Requests</h2>
-<ul>
-<li>Fork the project.
+<p>
+Because clog is all about color <a href="http://kswope.com">here's a blog
+posting with color pictures</a>
+</p>
+<h2>Usage</h2>
+<pre>
+  &gt; gem install clog
+</pre>
+<p>
+Rails 2x, in environment.rb
+</p>
+<pre>
+  Rails::Initializer.run do |config|
+    config.gem 'clog'
+  end
+</pre>
+<p>
+If you want to change the defaults you might have to require the gem also
+</p>
+<pre>
+  Rails::Initializer.run do |config|
+    config.gem 'clog'
+    require 'clog'
+    Clog.colors(:black, yellow)
+  end
+</pre>
+<p>
+Rails 3x, in Gemfile
+</p>
+<pre>
+  gem &quot;clog&quot;
+</pre>
+<p>
+You change the defaults in environment.rb just like rails 2x
+</p>
+<h3>Single argument</h3>
+<pre>
+  clog var
+</pre>
+<h3>Tagged argument</h3>
+<p>
+First argument must be a symbol, which it outputs before second argument.
+</p>
+<pre>
+  clog :var, var
 
-</li>
-<li>Make your feature addition or bug fix.
-
-</li>
-<li>Add tests for it. This is important so I don&#8216;t break it in a future
-version unintentionally.
-
-</li>
-<li>Commit, do not mess with rakefile, version, or history. (if you want to
-have your own version, that is fine but bump version in a commit by itself
-I can ignore when I pull)
-
-</li>
-<li>Send me a pull request. Bonus points for topic branches.
-
-</li>
-</ul>
+  {:one=&gt;1, :two=&gt;2, :three=&gt;3}.each do |k,v|
+    clog k, v
+  end
+</pre>
+<h3>Multiple arguments</h3>
+<p>
+Will output each on its own line.
+</p>
+<pre>
+  clog Object.new, Kernel, RUBY_VERSION, :a_symbol
+</pre>
+<h3>Changing color</h3>
+<p>
+Clog.colors(background, forground=white)
+</p>
+<p>
+Choices- :black, :red, :green, :yellow, :blue, :magenta, :cyan, :white
+</p>
+<pre>
+  Clog.colors(:blue)
+  Clog.colors(:black, yellow)
+</pre>
+<p>
+Default is red background, white foreground.
+</p>
+<h3>Max width</h3>
+<p>
+clog figures out when its appropriate to place additional information (line
+number, etc) on the right of the output or below it on the next line. Think
+of maxwidth as representing the width of your terminal window. The default
+is 150
+</p>
+<pre>
+  Clog.maxwidth(20)
+</pre>
 <h2>Copyright</h2>
 <p>
 Copyright (c) 2010 Kevin Swope. See LICENSE for details.
@@ -55,4 +116,4 @@ Files:   1
 Classes: 0
 Modules: 0
 Methods: 0
-Elapsed: 0.421s
+Elapsed: 0.098s

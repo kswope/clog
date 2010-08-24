@@ -1,16 +1,69 @@
-= clog
+= clog ("color log")
 
-Description goes here.
+Little Ruby On Rails debugging gem for writing colorized output to log file.
 
-== Note on Patches/Pull Requests
- 
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
+Because clog is all about color  
+{here's a blog posting with color pictures}[http://kswope.com]
+
+== Usage
+
+  > gem install clog
+
+Rails 2x, in environment.rb
+
+  Rails::Initializer.run do |config|
+    config.gem 'clog'
+  end
+
+If you want to change the defaults you might have to require the gem also
+
+  Rails::Initializer.run do |config|
+    config.gem 'clog'
+    require 'clog'
+    Clog.colors(:black, yellow)    
+  end
+
+Rails 3x, in Gemfile
+
+  gem "clog"
+
+You change the defaults in environment.rb just like rails 2x
+
+=== Single argument
+
+  clog var
+
+=== Tagged argument
+First argument must be a symbol, which it outputs before second argument.
+
+  clog :var, var
+
+  {:one=>1, :two=>2, :three=>3}.each do |k,v|
+    clog k, v
+  end
+
+=== Multiple arguments
+
+Will output each on its own line.
+
+
+  clog Object.new, Kernel, RUBY_VERSION, :a_symbol
+
+=== Changing color
+Clog.colors(background, forground=white)
+
+Choices- :black, :red, :green, :yellow, :blue, :magenta, :cyan, :white
+
+  Clog.colors(:blue)
+  Clog.colors(:black, yellow)
+
+Default is red background, white foreground.
+
+=== Max width
+clog figures out when its appropriate to place additional information (line number, etc) on the right of the output or below it on the next line.  Think of maxwidth
+as representing the width of your terminal window.  The default is 150
+
+  Clog.maxwidth(20)
 
 == Copyright
 
