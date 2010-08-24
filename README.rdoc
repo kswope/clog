@@ -29,6 +29,11 @@ Rails 3x, in Gemfile
 
 You change the defaults in environment.rb just like rails 2x
 
+
+=== No argument produces flag
+
+  clog
+
 === Single argument
 
   clog var
