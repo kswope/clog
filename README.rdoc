@@ -16,7 +16,7 @@ Rails 2x, in environment.rb
   end
 
 If you want to change the defaults in environment.rb you might have to require the
-gem also:
+gem:
 
   Rails::Initializer.run do |config|
     config.gem 'clog'
