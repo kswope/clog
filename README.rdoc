@@ -65,10 +65,12 @@ Choices- :black, :red, :green, :yellow, :blue, :magenta, :cyan, :white
 Default is red background, white foreground.
 
 === Max width
-clog figures out when its appropriate to place additional information (line number, etc) on the right of the output or below it on the next line.  Think of maxwidth
-as representing the width of your terminal window.  The default is 150
 
-  Clog.maxwidth(20)
+clog figures out when its appropriate to place additional information (line number,
+calling method, etc) on the right of the output or below it on the next line. Think
+of maxwidth as representing the width of your terminal window. The default is 150
+
+  Clog.maxwidth(100)
 
 == Copyright
 
