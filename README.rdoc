@@ -73,6 +73,10 @@ of maxwidth as representing the width of your terminal window. The default is 15
 
   Clog.maxwidth(100)
 
+=== Changes
+
+version 0.2.0 now outputs during testing (not to log but to shell)
+
 == Copyright
 
 Copyright (c) 2010 Kevin Swope. See LICENSE for details.
