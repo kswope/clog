@@ -22,7 +22,7 @@ class Clog
     def clog(*args)
 
       # write to appopriate stream
-      if defined?(Rails.logger) && Rails.env != 'test'
+      if defined?(Rails.logger)
         Rails.logger.debug(message(*args))
       else # for testing
         puts message(*args)

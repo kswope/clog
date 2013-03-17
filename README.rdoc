@@ -77,6 +77,10 @@ of maxwidth as representing the width of your terminal window. The default is 15
 
 version 0.2.0 now outputs during testing (not to log but to shell)
 
+version 0.2.1 does the opposite of the above line. Tests now have
+too much formatting and output, so lets log to test.log if we're
+running in a rails env
+
 == Copyright
 
 Copyright (c) 2010 Kevin Swope. See LICENSE for details.
