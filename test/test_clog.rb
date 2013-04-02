@@ -6,8 +6,8 @@ class Testclog < Test::Unit::TestCase
 
   def test_format
 
-    # These colors will probably be default
-    # Clog.colors(:red, :white)  
+    # Resetting, but these colors will probably be default
+    Clog.colors(:red, :white)  
 
     clog # should show flag
 
