@@ -1,4 +1,7 @@
-require 'helper'
+
+require 'clog'
+require 'test/unit'
+
 
 class Testclog < Test::Unit::TestCase
 

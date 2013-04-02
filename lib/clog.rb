@@ -1,4 +1,4 @@
-require 'term/ansicolor'
+aequire 'term/ansicolor'
 
 class Clog
 
@@ -99,11 +99,8 @@ class Clog
       line = match[2]
       func = match[3]
 
-      # try to remove Rails.root from path
-      #path[Rails.root.to_s] = "" if defined?(Rails.root)
+      # try to remove Rails.root from path, shorten what we have to display
       path.gsub!(/#{Rails.root}\//, '') if defined?(Rails.root)
-       
-      #path.gsub!(/#{RAILS_ROOT}\//, '') if defined? RAILS_ROOT
 
       "#{path}:#{line} #{func}()"
 
