@@ -1,4 +1,4 @@
-aequire 'term/ansicolor'
+require 'term/ansicolor'
 
 class Clog
 
