@@ -1,23 +1,6 @@
 require 'rubygems'
 require 'rake'
 
-begin
-  require 'jeweler'
-  Jeweler::Tasks.new do |gem|
-    summary = "Little rails debugging gem for writing colorized output to log file."
-    gem.name = "clog"
-    gem.summary = summary
-    gem.description = summary
-    gem.email = "gems-kevdev@snkmail.com"
-    gem.homepage = "http://github.com/kswope/clog"
-    gem.authors = ["Kevin Swope"]
-    gem.add_dependency('term-ansicolor')    
-    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
-  end
-  Jeweler::GemcutterTasks.new
-rescue LoadError
-  puts "Jeweler (or a dependency) not available. Install it with: gem install jeweler"
-end
 
 desc "build README.html from README.doc (for previewing in browser)"
 task :readme do
