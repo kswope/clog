@@ -21,3 +21,5 @@ pkg
 ## PROJECT::SPECIFIC
 *.log
 *.sqlite3
+
+*.gem

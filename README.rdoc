@@ -9,26 +9,9 @@ Because clog is all about color
 
   > gem install clog
 
-Rails 2x, in environment.rb
-
-  Rails::Initializer.run do |config|
-    config.gem 'clog'
-  end
-
-If you want to change the defaults in environment.rb you might have to require the
-gem:
-
-  Rails::Initializer.run do |config|
-    config.gem 'clog'
-    require 'clog'
-    Clog.colors(:black, yellow)    
-  end
-
 Rails 3x, in Gemfile
 
   gem "clog"
-
-You change the defaults in environment.rb just like rails 2x
 
 
 === No argument outputs a "flag"
@@ -56,6 +39,9 @@ Will output each on its own line.
   clog Object.new, Kernel, RUBY_VERSION, :a_symbol
 
 === Changing color
+
+Put something like this in a rails config file someplace
+
 Clog.colors(background, forground=white)
 
 Choices- :black, :red, :green, :yellow, :blue, :magenta, :cyan, :white
