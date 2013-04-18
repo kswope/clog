@@ -8,7 +8,7 @@ task :readme do
 end
 
 task :default => :test
-task :test => [:test_default, :test_rails2x, :test_rails3x]
+task :test => [:test_default, :test_rails]
 
 require 'rake/testtask'
 Rake::TestTask.new(:test_default) do |test|
@@ -17,14 +17,8 @@ Rake::TestTask.new(:test_default) do |test|
   test.verbose = true
 end
 
-task :test_rails2x do |t|
-  chdir "test/rails2x_root" do
-    system "rake"
-  end
-end
-
-task :test_rails3x do |t|
-  chdir "test/rails3x_root" do
+task :test_rails do |t|
+  chdir "test/rails_root" do
     system "rake"
   end
 end
